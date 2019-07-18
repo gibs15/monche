@@ -22,12 +22,15 @@ class UsersController extends AppController
     public function register()
     {
 
-        this->layout->setViewBuilder('ajax');
+        $this->layout->setViewBuilder('ajax');
 
         if ($this->request->is('post')) {
-
+            debug('dead');
+            die();
 
         }
+
+
     }
 
 

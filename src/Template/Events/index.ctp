@@ -1,63 +1,89 @@
+<?php 
+    $this->start('backimg');
+
+?>
+
+    <?php echo $this->request->webroot; ?>images/bg_1.jpg
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('title');
+
+?>Eventos
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('scripts');
+
+?>
+
+
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            $('#list').DataTable({
+              "language": {
+                "url": "/monche/plugins/datatables/Spanish.json"
+              }
+            });
+        } );
+
+    </script>
+
+
+<?php $this->end();?>
+
+
+
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $events
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+    <section class="ftco-section">
+        <div class="container">
+    <nav class="large-3 medium-4 columns" id="actions-sidebar">
+        <ul class="side-nav">
+            
+            <?= $this->Html->link(__('Nuevo Evento'), ['action' => 'add'],['class' => 'btn btn-success pull-left']) ?>
+        </ul>
+    </nav>
 <div class="events index large-9 medium-8 columns content">
-    <h3><?= __('Events') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <h3><?= __('Eventos') ?></h3>
+    <table id="list" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('food_type') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('n_meals') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('location_lat') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('location_long') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('datetime') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo de Comida</th>
+                <th scope="col">Cantidad de comidas</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Estado</th>
+                <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($events as $event): ?>
             <tr>
-                <td><?= $this->Number->format($event->id) ?></td>
+                
                 <td><?= h($event->name) ?></td>
                 <td><?= h($event->food_type) ?></td>
-                <td><?= $this->Number->format($event->n_meals) ?></td>
-                <td><?= $this->Number->format($event->location_lat) ?></td>
-                <td><?= $this->Number->format($event->location_long) ?></td>
+                <td><?= h($event->n_meals) ?></td>
                 <td><?= h($event->datetime) ?></td>
-                <td><?= $event->has('user') ? $this->Html->link($event->user->name, ['controller' => 'Users', 'action' => 'view', $event->user->id]) : '' ?></td>
                 <td><?= h($event->status) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $event->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $event->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $event->id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->id)]) ?>
+                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $event->id]) ?>
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $event->id]) ?>
+                    <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $event->id], ['confirm' => __('Está seguro que desea eliminar a {0}?', $event->name)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
+    
 </div>
+
+</div>
+</section>

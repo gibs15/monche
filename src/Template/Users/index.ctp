@@ -1,61 +1,92 @@
+<?php 
+    $this->start('backimg');
+
+?>
+
+    <?php echo $this->request->webroot; ?>images/bg_1.jpg
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('title');
+
+?>Usuarios
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('scripts');
+
+?>
+
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            $('#list').DataTable({
+              "language": {
+                "url": "/monche/plugins/datatables/Spanish.json"
+              }
+            });
+        } );
+
+    </script>
+
+
+<?php $this->end();?>
+
+
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Ong Users'), ['controller' => 'OngUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Ong User'), ['controller' => 'OngUsers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Subscriptions'), ['controller' => 'Subscriptions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Subscription'), ['controller' => 'Subscriptions', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Users') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('passwd') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('role') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= $this->Number->format($user->id) ?></td>
-                <td><?= h($user->name) ?></td>
-                <td><?= h($user->email) ?></td>
-                <td><?= $this->Number->format($user->phone) ?></td>
-                <td><?= h($user->passwd) ?></td>
-                <td><?= h($user->role) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+
+    <section class="ftco-section">
+        <div class="container">
+
+
+    <nav class="large-3 medium-4 columns" id="actions-sidebar">
+        <ul class="side-nav">
+            
+            <?= $this->Html->link(__('Nuevo Usuario'), ['action' => 'add'],['class' => 'btn btn-success pull-left']) ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+    </nav>
+
+    <div class="users index large-9 medium-8 columns content">
+        <h3><?= __('Usuarios') ?></h3>
+        <table id="list" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo Electrónico</th>
+                    <th scope="col">Teléfono</th>
+                    
+                    <th scope="col">Rol</th>
+                    <th scope="col" class="actions">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user): ?>
+                <tr>
+                    
+                    <td><?= h($user->name) ?></td>
+                    <td><?= h($user->email) ?></td>
+                    <td><?= h($user->phone) ?></td>
+                    
+                    <td><?= h($user->role) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('Ver'), ['action' => 'view', $user->id]) ?>
+                        <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
+                        <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $user->id], ['confirm' => __('Está seguro que desea eliminar a {0}?', $user->name)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
     </div>
-</div>
+
+    </div>
+    </section>

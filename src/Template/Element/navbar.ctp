@@ -7,10 +7,16 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">Administrar:</li>
+          <li class="nav-item "><?= $this->Html->link('Usuarios',['controller' => 'Users', 'action' => 'index'],['class' => 'nav-link']);?></li>
+          <li class="nav-item "><?= $this->Html->link('ONGs',['controller' => 'Ongs', 'action' => 'index'],['class' => 'nav-link']);?></li>
+          <li class="nav-item "><?= $this->Html->link('Eventos',['controller' => 'Events', 'action' => 'index'],['class' => 'nav-link']);?></li>
+          <li class="nav-item "><?= $this->Html->link('Suscripciones',['controller' => 'Subscriptions', 'action' => 'index'],['class' => 'nav-link']);?></li>
+          <li class="nav-item ">|</li>
           <li class="nav-item active"><a href="/" class="nav-link">Inicio</a></li>
-          <li class="nav-item"><a href="/about" class="nav-link">Sobre Nosotros</a></li>
-          <li class="nav-item"><a href="event.html" class="nav-link">Eventos</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+          <li class="nav-item"><?= $this->Html->link('Sobre Nosotros',['controller' => 'Pages', 'action' => 'display', 'about'],['class' => 'nav-link']);?></li>
+          <li class="nav-item"><?= $this->Html->link('Eventos',['controller' => 'Events', 'action' => 'display'],['class' => 'nav-link']);?></li>
+          <!--li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li-->
           <li class="nav-item"><a class="nav-link" href="javascript:modalLogin()">Ingresar</a></li>
         </ul>
       </div>

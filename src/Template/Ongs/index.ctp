@@ -1,61 +1,89 @@
+<?php 
+    $this->start('backimg');
+
+?>
+
+    <?php echo $this->request->webroot; ?>images/bg_1.jpg
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('title');
+
+?>ONGs
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('scripts');
+
+?>
+
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            $('#list').DataTable({
+              "language": {
+                "url": "/monche/plugins/datatables/Spanish.json"
+              }
+            });
+        } );
+
+    </script>
+
+
+<?php $this->end();?>
+
+
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Ong[]|\Cake\Collection\CollectionInterface $ongs
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Ong'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
+
+
+    <section class="ftco-section">
+        <div class="container">
+
+    <nav class="large-3 medium-4 columns" id="actions-sidebar">
+        <ul class="side-nav">
+            
+            <?= $this->Html->link(__('Nueva ONG'), ['action' => 'add'],['class' => 'btn btn-success pull-left']) ?>
+        </ul>
+    </nav>
 <div class="ongs index large-9 medium-8 columns content">
-    <h3><?= __('Ongs') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <h3><?= __('ONGs') ?></h3>
+    <table id="list" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('opens_at') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('closes_at') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('from_day') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('to_day') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('location_lat') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('location_long') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                
+                <th scope="col">Nombre</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Horario</th>
+                <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($ongs as $ong): ?>
             <tr>
-                <td><?= $this->Number->format($ong->id) ?></td>
+                
                 <td><?= h($ong->name) ?></td>
                 <td><?= $this->Number->format($ong->phone) ?></td>
-                <td><?= h($ong->opens_at) ?></td>
-                <td><?= h($ong->closes_at) ?></td>
-                <td><?= h($ong->from_day) ?></td>
-                <td><?= h($ong->to_day) ?></td>
-                <td><?= $this->Number->format($ong->location_lat) ?></td>
-                <td><?= $this->Number->format($ong->location_long) ?></td>
+                <td>Abre de <?= h($ong->from_day) ?> a <?= h($ong->to_day) ?> de <?= h($ong->opens_at) ?> a <?= h($ong->closes_at) ?></td>
+                
+
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ong->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ong->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ong->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ong->id)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ong->id], ['confirm' => __('Está seguro que desea eliminar a {0}?', $ong->name)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
+
 </div>
+
+</div>
+</section>
