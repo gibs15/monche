@@ -20,4 +20,7 @@
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/icomoon.css">
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/style.css">
 
-    <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>plugins/sweetalert.css">
+    <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>plugins/sweetalert/sweetalert.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+

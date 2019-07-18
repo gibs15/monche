@@ -10,6 +10,7 @@
 
 	<?= $this->element('navbar') ?>
 
+
 	<div class="hero-wrap" style="background-image: url(<?= $this->fetch('backimg')?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">

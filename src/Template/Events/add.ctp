@@ -1,15 +1,33 @@
+<?php 
+    $this->start('backimg');
+
+?>
+
+    <?php echo $this->request->webroot; ?>images/bg_1.jpg
+
+<?php $this->end();?>
+
+<?php 
+    $this->start('title');
+
+?>ONGs
+
+<?php $this->end();?>
+
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Event $event
  */
 ?>
+
+
+    <section class="ftco-section">
+        <div class="container">
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Atrás'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="events form large-9 medium-8 columns content">
@@ -30,3 +48,7 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+
+        </div>
+
+        </section>

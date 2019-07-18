@@ -16,4 +16,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo $this->request->webroot; ?>js/google-map.js"></script>
   <script src="<?php echo $this->request->webroot; ?>js/main.js"></script>
-  <script src="<?php echo $this->request->webroot; ?>plugins/sweetalert.min.js"></script>
+
+  <script src="<?php echo $this->request->webroot; ?>plugins/sweetalert/sweetalert.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
