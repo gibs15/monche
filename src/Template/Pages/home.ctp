@@ -3,7 +3,7 @@
 
 ?>
 
-	<?php echo $this->request->webroot; ?>images/bg_1.jpg
+	<?php echo $this->request->webroot; ?>images/banner_1.jpg
 
 <?php $this->end();?>
 
