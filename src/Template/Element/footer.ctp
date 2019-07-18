@@ -6,7 +6,7 @@
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Acerca de Monche</h2>
-              <p>Somos un proyecto que tiene como objetivo plantear una solución al desperdicio de comida en buen estado que ocurre en diferentes establecimientos, pero principalmente busca proveer alimentos a las personas que viven en la calle y no tienen forma de alimentarse. Se pretende lograr esto al combinar ambas ideas de manera que se beneficien las dos partes.</p>
+              <p>Somos un proyecto que tiene como objetivo plantear una solución al desperdicio de comida en buen estado, pero principalmente busca proveer alimentos a las personas que viven en la calle y no tienen forma de alimentarse. Se pretende lograr esto al combinar ambas ideas de manera que se beneficien las dos partes.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
