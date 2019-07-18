@@ -8883,6 +8883,8 @@ textarea.form-control {
     float: left; }
   .custom-pagination .next {
     float: right; }
+	
+
 
 /* Blog*/
 .post-info {
@@ -8913,6 +8915,7 @@ textarea.form-control {
 
 .comment-form-wrap {
   clear: both; }
+  
 
 .comment-list {
   padding: 0;

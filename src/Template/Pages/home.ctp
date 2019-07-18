@@ -10,7 +10,7 @@
 <?php 
     $this->start('title');
 
-?>Bievenido<?php $this->end();?>
+?>Bienvenido<?php $this->end();?>
 
 
     <section class="ftco-section">

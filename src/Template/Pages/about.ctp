@@ -10,7 +10,7 @@
 <?php 
     $this->start('title');
 
-?>Sobre Nosotros<?php $this->end();?>
+?>Sobre nosotros<?php $this->end();?>
 
 
     <section class="ftco-section">
@@ -24,7 +24,57 @@
     				<p>Su nombre proviene de la combinación entre las palabras “moncha” y “Chepe”. La primera es propia del lenguaje coloquial que contiene una parte del pensamiento costarricense y cuyo significado corresponde a la noción de comida o tener hambre. Por su parte, Chepe corresponde un diminutivo del nombre José, con el que se hace referencia comúnmente a la capital del país, San José.</p>
     				<p>Somos un proyecto que tiene como objetivo plantear una solución al desperdicio de comida en buen estado que ocurre en diferentes establecimientos, pero principalmente busca proveer alimentos a las personas que viven en la calle y no tienen forma de alimentarse. Se pretende lograr esto al combinar ambas ideas de manera que se beneficien las dos partes.</p>
     			</div>
+				
+				<hr>
+				<div class="w3-content" style="max-width:1100px">
+				<div class="w3-row w3-padding-64" id="objetivo">
+				<div class="w3-col l6 w3-padding-large">
+				<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4">Objetivo</h2>
+    				<p>Aprovechar la comida en buen estado de diferentes sodas y establecimientos, que usualmente se desecha, para alimentar a las personas que no tienen qué comer y viven en la ciudad de San José y cantones cercanos.</p>
+    			</div>
+				</div>
+				</div>
+				
+				<hr>
+				
+				<div class="w3-row w3-padding-64" id="mision">
+    			<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4">Misión</h2>
+    				<p>Proveer alimentos a personas que no tienen qué comer y viven en la ciudad de San José y sus cantones cercanos, al contactar a organizaciones que estén interesadas en donar comida que usualmente se desecha y está en buenas condiciones. Todo esto se pretende lograr con la ayuda de personas voluntarias que recolecten la comida.</p>
+    			</div>
+				</div>
+				
+				<hr>
+
+				<div class="w3-row w3-padding-64" id="vision">
+				<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4">Visión</h2>
+    				<p>Mejorar la situación de las personas que viven en las calles y no tienen qué comer en todas partes de Costa Rica. Ser una organización conocida mundialmente e incentivar la creación de iniciativas similares en otros países y de esta manera expandir su alcance y ayudar a más personas.</p>
+    			</div>
+				</div>
+				
+				<hr>
+				
+				<div class="w3-row w3-padding-64" id="vision">
+				<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4">Valores</h2>
+    				<ul>
+						<li>Amabilidad</li>
+						<li>Responsabilidad</li>
+						<li>Cooperación</li>
+						<li>Organización</li>
+						<li>Solidaridad</li>
+						<li>Honestidad</li>
+						<li>Empatía</li>
+					</ul>
+    			</div>
+				</div>
+				
+				<hr>
+				
     		</div>
+			</div>
     	</div>
     </section>
 
@@ -37,7 +87,7 @@
               <div class="text">
               	<span>Cantidad de comidas</span>
                 <strong class="number" data-number="120">0</strong>
-                <span>Servidas a personas y no desperdiciadas </span>
+                <span>servidas a personas y no desperdiciadas </span>
               </div>
             </div>
           </div>
