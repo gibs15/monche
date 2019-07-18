@@ -7,11 +7,11 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">Sobre Nosotros</a></li>
+          <li class="nav-item active"><a href="/" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">Sobre Nosotros</a></li>
           <li class="nav-item"><a href="event.html" class="nav-link">Eventos</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Ingresar</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:modalLogin()">Ingresar</a></li>
         </ul>
       </div>
     </div>

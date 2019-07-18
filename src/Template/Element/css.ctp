@@ -19,3 +19,5 @@
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/flaticon.css">
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/icomoon.css">
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/style.css">
+
+    <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>plugins/sweetalert.css">

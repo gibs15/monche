@@ -10,11 +10,12 @@
 <?php 
     $this->start('title');
 
-?>Inicio<?php $this->end();?>
+?>Bievenido<?php $this->end();?>
 
 
-
-<div class="row">
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row">
         	<div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
               <a href="blog-single.html" class="block-20" style="background-image: url('images/event-1.jpg');">
@@ -133,3 +134,5 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
