@@ -2,7 +2,7 @@
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/animate.css">
     
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo $this->request->webroot; ?>css/owl.theme.default.min.css">

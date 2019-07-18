@@ -12,6 +12,35 @@ use App\Controller\AppController;
  */
 class SubscriptionsController extends AppController
 {
+
+
+    public function new($id = null)
+    {
+
+        $subscription = $this->Subscriptions->newEntity();
+
+
+        $this->Events = $this->loadModel('Events');
+    
+        $this->paginate = [
+            'contain' => ['Users'],
+            'conditions' => ['Events.id' => $id]
+        ];
+        $event = $this->paginate($this->Events);
+        
+
+        if ($this->request->is('post')) {
+            $subscription = $this->Subscriptions->patchEntity($subscription, $this->request->getData());
+            if ($this->Subscriptions->save($subscription)) {
+                $this->Flash->success(__('The subscription has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The subscription could not be saved. Please, try again.'));
+        }
+        $this->set(compact('subscription','event'));
+    }
+
     /**
      * Index method
      *

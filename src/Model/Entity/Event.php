@@ -10,8 +10,7 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property string|null $food_type
  * @property int $n_meals
- * @property int $location_lat
- * @property int $location_long
+ * @property string $address
  * @property \Cake\I18n\FrozenTime $datetime
  * @property int $user_id
  * @property string|null $status
@@ -33,8 +32,7 @@ class Event extends Entity
         'name' => true,
         'food_type' => true,
         'n_meals' => true,
-        'location_lat' => true,
-        'location_long' => true,
+        'address' => true,
         'datetime' => true,
         'user_id' => true,
         'status' => true,

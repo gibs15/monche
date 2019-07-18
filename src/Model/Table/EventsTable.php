@@ -70,14 +70,10 @@ class EventsTable extends Table
             ->allowEmptyString('n_meals', false);
 
         $validator
-            ->integer('location_lat')
-            ->requirePresence('location_lat', 'create')
-            ->allowEmptyString('location_lat', false);
-
-        $validator
-            ->integer('location_long')
-            ->requirePresence('location_long', 'create')
-            ->allowEmptyString('location_long', false);
+            ->scalar('address')
+            ->maxLength('address', 16777215)
+            ->requirePresence('address', 'create')
+            ->allowEmptyString('address', false);
 
         $validator
             ->dateTime('datetime')

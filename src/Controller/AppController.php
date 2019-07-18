@@ -60,7 +60,7 @@ class AppController extends Controller
     {
         parent::beforeFilter($event);
         $this->viewBuilder()->layout('frontend');
-        /*$template = [
+        $template = [
             'inputContainer' => '<div class="form-group input {{type}}">{{content}}</div>',
             'input' => '<input type="{{type}}" name="{{name}}" class="form-control"{{attrs}}/>',
             'inputContainerError' => '<div class="form-group {{type}} error"> {{content}} {{error}}</div>',
@@ -69,7 +69,7 @@ class AppController extends Controller
             'checkboxContainer' => '<div class="checkbox checkbox-info">{{content}}</div>',
             
         ];
-        */
+        
 
 
         //$session = $this->request->getSession();
@@ -79,6 +79,7 @@ class AppController extends Controller
         //$this->set('uname', $this->Auth->user('first_name'));
         //$this->set('ulname', $this->Auth->user('last_name'));
         //$this->set('rol', $this->Auth->user('rol') );
+        $this->set('template', $template);
         
     }
 

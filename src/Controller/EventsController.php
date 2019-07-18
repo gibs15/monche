@@ -27,6 +27,17 @@ class EventsController extends AppController
         $this->set(compact('events'));
     }
 
+    public function display()
+    {
+        $this->paginate = [
+            'contain' => ['Users'],
+            'conditions' => ['status' => 'Abierto']
+        ];
+        $events = $this->paginate($this->Events);
+
+        $this->set(compact('events'));
+    }
+
     /**
      * View method
      *
